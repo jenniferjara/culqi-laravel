@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class CulqiControllers extends Controller
+class CheckotCulqiController extends Controller
 {
 
 	private $culqi;
@@ -48,12 +48,12 @@ class CulqiControllers extends Controller
 		// cargo
 		$charge = $this->culqi->Charge->create(
 			array(
-		      "amount" => $request->get('amount'),
+		      "amount" => 200,
 		      "capture" => true,
 		      "currency_code" => "PEN",
 		      "description" => $request->get('description'),
 		      "email" => $request->get('email'),
-		      "installments" => 0,
+		      // "installments" => 0,
 		      // "antifraud_details" => array(
 		      //     "address" => "Av. Lima 123",
 		      //     "address_city" => "LIMA",
@@ -62,9 +62,9 @@ class CulqiControllers extends Controller
 		      //     "last_name" => "Muro",
 		      //     "phone_number" => "9889678986",
 		      // ),
-		      "source_id" => "{card_id}"
+		      "source_id" => $request->get('token')
 		    )
 		);
-		echo json_encode($charge);
+		print_r($charge);
     }
 }
