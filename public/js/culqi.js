@@ -4,7 +4,7 @@ Culqi.settings({
   title: 'Culqi Store',
   currency: 'PEN',
   description: 'Polo/remera Culqi lover',
-  amount: 300
+  amount: 200
  });
  $('#miBoton').on('click', function (e) {
       // Abre el formulario con las opciones de Culqi.configurar
@@ -22,12 +22,17 @@ function culqi() {
       $.ajax({
          type: 'POST',
          url: './cargo',
-         data: { token: Culqi.token.id },
+         data: { 
+          token: Culqi.token.id,
+          email: Culqi.token.email
+        },
          datatype: 'json',
          success: function(data) {
+           console.log(data);
            var result = "";
            if(data.constructor == String){
                result = JSON.parse(data);
+               console.log(result);
            }
            if(data.constructor == Object){
                result = JSON.parse(JSON.stringify(data));

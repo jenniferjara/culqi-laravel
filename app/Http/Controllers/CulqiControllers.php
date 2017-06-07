@@ -6,15 +6,18 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class CheckotCulqiController extends Controller
-{
+// class CheckotCulqiController extends Controller
+// {
 
-	private $culqi;
+	// private $culqi;
     
-    public function __construct() {
-    	$this->culqi = new Culqi\Culqi(array('api_key' => config('app.culqi_secret_key')));
-    	parent::__construct();
-    }
+ //    public function __construct() {
+ //    	$this->culqi = new Culqi\Culqi(array('api_key' => config('app.culqi_secret_key')));
+ //    	parent::__construct();
+ //    }
+
+    $SECRET_KEY = config('app.culqi_secret_key');
+	$culqi = new Culqi\Culqi(array('api_key' => $SECRET_KEY));
 
   //   public function customer( Request $request ) {
   //   	// cliente
@@ -67,4 +70,4 @@ class CheckotCulqiController extends Controller
 		);
 		print_r($charge);
     }
-}
+// }
