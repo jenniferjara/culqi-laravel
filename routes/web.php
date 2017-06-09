@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('culqi');
 });
 
-Route::post('/cargo', function () {
+Route::post('cargo', function () {
 	
 
 	$SECRET_KEY = "sk_test_Pu63eYSmOW5uWcQO";

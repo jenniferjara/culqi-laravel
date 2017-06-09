@@ -21,7 +21,7 @@ function culqi() {
       // Imprimir Token
       $.ajax({
          type: 'POST',
-         url: './cargo',
+         url: 'cargo',
          data: { 
           token: Culqi.token.id,
           email: Culqi.token.email
@@ -30,25 +30,25 @@ function culqi() {
          success: function(data) {
 
            var result = "";
-           var obj = "";
+           var resultError = "";
 
            if(data.constructor === String){
-               result = JSON.parse(data);
+              result = JSON.parse(data);
            }
            if(result.constructor == String){
-               obj = JSON.parse(result);
+              resultError = JSON.parse(result);
            }
 
            if(result.object === 'charge'){
               resultdiv(result.outcome.user_message);
            }
-           if(obj.object === 'error'){
-              resultdiv(obj.merchant_message);
+           if(resultError.object === 'error'){
+              resultdiv(resultError.user_message);
            }
            console.log("cargo");
            console.log(result);
            console.log("error");
-           console.log(obj);
+           console.log(resultError);
          },
          error: function(error) {
            resultdiv(error)

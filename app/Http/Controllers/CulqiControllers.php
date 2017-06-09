@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use Culqi\Culqi;
 // class CheckotCulqiController extends Controller
 // {
 
