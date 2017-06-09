@@ -1,9 +1,9 @@
  $("#response-panel").hide();
 Culqi.publicKey = 'pk_test_q7B2IUAWACxYhnsW';
 Culqi.settings({
-  title: 'Culqi Store',
+  title: 'Store',
   currency: 'PEN',
-  description: 'Polo/remera Culqi lover',
+  description: 'Accesorios',
   amount: 200
  });
  $('#miBoton').on('click', function (e) {
@@ -28,21 +28,27 @@ function culqi() {
         },
          datatype: 'json',
          success: function(data) {
-           console.log(data);
+
            var result = "";
-           if(data.constructor == String){
+           var obj = "";
+
+           if(data.constructor === String){
                result = JSON.parse(data);
-               console.log(result);
            }
-           if(data.constructor == Object){
-               result = JSON.parse(JSON.stringify(data));
+           if(result.constructor == String){
+               obj = JSON.parse(result);
            }
+
            if(result.object === 'charge'){
-            resultdiv(result.outcome.user_message);
+              resultdiv(result.outcome.user_message);
            }
-           if(result.object === 'error'){
-               resultdiv(result.merchant_message);
+           if(obj.object === 'error'){
+              resultdiv(obj.merchant_message);
            }
+           console.log("cargo");
+           console.log(result);
+           console.log("error");
+           console.log(obj);
          },
          error: function(error) {
            resultdiv(error)

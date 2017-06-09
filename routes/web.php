@@ -26,6 +26,7 @@ Route::post('/cargo', function () {
 		  array(
 		    "amount" => 200,
 		    "currency_code" => "PEN",
+		    "description" => "Accesorios",
 		    "email" => $_POST["email"],
 		    "source_id" => $_POST["token"]
 		    // "antifraud_details" => array(
