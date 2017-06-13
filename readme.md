@@ -1,7 +1,6 @@
 ## Esta es una integración de Culqi v2 con Laravel
 
 ## Learning Laravel
-<p align="left" width="200"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 <p align="left">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
