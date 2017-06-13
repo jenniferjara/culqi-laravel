@@ -4,7 +4,7 @@ Culqi.settings({
   title: 'Store',
   currency: 'PEN',
   description: 'Accesorios',
-  amount: 200
+  amount: 100
  });
  $('#miBoton').on('click', function (e) {
       // Abre el formulario con las opciones de Culqi.configurar
@@ -27,28 +27,20 @@ function culqi() {
           email: Culqi.token.email
         },
          datatype: 'json',
-         success: function(data) {
+         success: function(data, status) {
+            console.log(data);
+            console.log(status);
 
-           var result = "";
-           var resultError = "";
-
-           if(data.constructor === String){
-              result = JSON.parse(data);
+           if(data.object === 'charge'){
+               resultdiv(data.outcome.user_message);
            }
-           if(result.constructor == String){
-              resultError = JSON.parse(result);
+           if(data.object === 'error'){
+               resultdiv(data.user_message);
            }
-
-           if(result.object === 'charge'){
-              resultdiv(result.outcome.user_message);
-           }
-           if(resultError.object === 'error'){
-              resultdiv(resultError.user_message);
-           }
-           console.log("cargo");
-           console.log(result);
-           console.log("error");
-           console.log(resultError);
+           // console.log("cargo");
+           // console.log(result);
+           // console.log("error");
+           // console.log(resultError);
          },
          error: function(error) {
            resultdiv(error)
