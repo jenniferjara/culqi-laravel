@@ -7,18 +7,17 @@ Culqi.settings({
   amount: 100
  });
  $('#miBoton').on('click', function (e) {
-      // Abre el formulario con las opciones de Culqi.configurar
       Culqi.open();
       e.preventDefault();
   });
 
-// Recibimos Token del Culqi.js
+
 function culqi() {
   if (Culqi.token) {
       $(document).ajaxStart(function(){
         run_waitMe();
       });
-      // Imprimir Token
+
       $.ajax({
          type: 'POST',
          url: 'cargo',
@@ -37,18 +36,12 @@ function culqi() {
            if(data.object === 'error'){
                resultdiv(data.user_message);
            }
-           // console.log("cargo");
-           // console.log(result);
-           // console.log("error");
-           // console.log(resultError);
          },
          error: function(error) {
            resultdiv(error)
          }
       });
   } else {
-    // Hubo un problema...
-    // Mostramos JSON de objeto error en consola
     $('#response-panel').show();
     $('#response').html(Culqi.error.merchant_message);
     $('body').waitMe('hide');
