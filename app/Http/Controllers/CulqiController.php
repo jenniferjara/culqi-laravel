@@ -17,13 +17,13 @@ class CulqiController extends Controller
         {
             $cliente = $culqi->Customers->create(
                 array(
-                    "first_name" => "Anna",
+                    "first_name" => "Carlos",
                     "last_name" => "Martinez",
                     "email" => $_POST["email"],
                     "address" => "San Francisco Bay Area",
                     "address_city" => "Palo Alto",
                     "country_code" => "US",
-                    "phone_number" => "999888777"
+                    "phone_number" => "678213476"
                 )
             );
 
