@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('culqi');
 });
 
-Route::post('cargo', 'CulqiController@charge');
+Route::post('cargo', ["as" => "checkout.charge", "uses" => "CulqiController@charge"]);

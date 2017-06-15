@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Culqi PHP - LARAVEL Example</h1>
+      <h1></h1>
       <a id="miBoton" class="btn btn-primary" href="#" >Pay</a>
       <br/><br/><br/>
       <div class="panel panel-default" id="response-panel">
