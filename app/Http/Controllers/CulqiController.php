@@ -41,13 +41,14 @@ class CulqiController extends Controller
                     "description" => "Accesorios",
                     "email" => $_POST["email"],
                     "source_id" => $tarjeta->id
+                    // "source_id" => $_POST["token"]
                 )
             );
             
             $suscripcion = $culqi->Subscriptions->create(
                 array(
                     "card_id" => $tarjeta->id,
-                    "plan_id" => "pln_test_sgcOLIIW5MC1vdoW"
+                    "plan_id" => "pln_test_8p6DpSRd9tWSAVxD"
                 )
             );
 
